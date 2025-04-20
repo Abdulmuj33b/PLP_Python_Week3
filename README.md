@@ -1,2 +1,21 @@
 # PLP_Python_Week3
 Assignment
+def calculate_discount(price, discount_percent):
+    """Calculate final price after applying a discount if it's 20% or higher."""
+    if discount_percent >= 20:
+        discounted_price = price - (price * (discount_percent / 100))
+        return discounted_price
+    return price
+
+# Prompt user for input
+original_price = float(input("Enter the original price of the item: "))
+discount_percentage = float(input("Enter the discount percentage: "))
+
+# Get the final price
+final_price = calculate_discount(original_price, discount_percentage)
+
+# Print the result
+if discount_percentage >= 20:
+    print(f"The final price after applying a {discount_percentage}% discount is: {final_price:.2f}")
+else:
+    print(f"No discount applied. The original price is: {original_price:.2f}")
